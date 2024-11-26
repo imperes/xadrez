@@ -2,13 +2,13 @@
      width="30%"
      style="padding: 10px">
 
-# Hangman
+# Xadrez
 
-## Implementação do jogo da Forca
+## Implementação do jogo de Xadrez
 
 > Repositório destinado para o desenvolvimento do projeto final da discipliana PRG22107 - Programação orienta a objeto. 
 > 
-> Aluno: Nome do aluno  
+> Alunos: Gabriel de Oliveira Peres e Paulo Henrique Polato de Medeiros  
 > Professor: Hugo Marcondes
 
 <p align=center><strong>SUMÁRIO</strong></p>
