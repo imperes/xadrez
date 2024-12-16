@@ -101,7 +101,10 @@ O xadrez é um jogo de tabuleiro de posicionamento estratégico para dois jogado
 7. Caso haja xeque, o jogador alvo deve resolver a situação para a partida prosseguir;
 8. Caso o jogador não consiga se evadir do xeque, ocorre o xeque-mate, resultando na vitória do jogador adversário e encerrando a partida.
 
-![Diagrama de Casos de Uso - Jogo de Xadrez](img/Casos de Uso Jogo de Xadrez UML.png)
+<figure>
+  <img src="img/Casos de Uso Jogo de Xadrez UML.png" width="60%" style="padding: 10px">
+  <figcaption>Diagrama de Casos de Uso - Jogo de Xadrez</figcaption>
+</figure>
 
 
 ## Diagrama de Domínio do problema
