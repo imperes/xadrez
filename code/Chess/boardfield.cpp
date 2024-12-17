@@ -1,6 +1,4 @@
 #include "boardfield.h"
-#include <gameview.h>
-#include <utils.h>
 
 int BoardField::defaultWidthHeight = 60;
 

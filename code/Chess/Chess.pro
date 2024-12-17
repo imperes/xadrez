@@ -10,16 +10,13 @@ CONFIG += c++17
 
 SOURCES += \
     boardfield.cpp \
-    main.cpp \
-    gameview.cpp
+    main.cpp
 
 HEADERS += \
     boardfield.h \
-    boardposition.h \
-    gameview.h
+    boardposition.h
 
-FORMS += \
-    gameview.ui
+FORMS +=
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
