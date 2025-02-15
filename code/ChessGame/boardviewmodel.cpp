@@ -207,22 +207,44 @@ bool BoardViewModel::didPromoteActivePawn() {
         return false;
     }
 
+    // Check if the pawn has reached the last row of the board
+    bool shouldPromote = false;
     switch (activePawn->owner) {
     case PlayerType::black:
-        if (activePawn->position.y == 7) {
-            activePawn->type = PawnType::queen;
-            return true;
-        }
+        shouldPromote = (activePawn->position.y == 7);
         break;
     case PlayerType::white:
-        if (activePawn->position.y == 0) {
-            activePawn->type = PawnType::queen;
-            return true;
-        }
+        shouldPromote = (activePawn->position.y == 0);
         break;
     }
 
-    return false;
+    if (!shouldPromote) {
+        return false;
+    }
+
+    // Create new piece (queen) in the same position as the pawn
+    BoardPosition position = activePawn->position;
+    PlayerType owner = activePawn->owner;
+    QString imagePath = pawnViewModel.getImagePath(PawnType::queen, owner);
+    BasePawnModel *newQueen = new QueenPawnModel(position, owner, PawnType::queen, imagePath);
+
+    // Remove the old pawn from the parts list
+    switch (owner) {
+    case PlayerType::black:
+        blackPawns.removeAll(activePawn);
+        blackPawns.append(newQueen);
+        break;
+    case PlayerType::white:
+        whitePawns.removeAll(activePawn);
+        whitePawns.append(newQueen);
+        break;
+    }
+
+    // Delete the old pawn and replace it with the new one
+    delete activePawn;
+    activePawn = newQueen;
+
+    return true;
 }
 
 void BoardViewModel::switchRound() {
