@@ -73,33 +73,7 @@ O xadrez é um jogo estratégico para dois jogadores, com um tabuleiro **8x8** e
 3. **Portabilidade:**
     - O jogo deve ser executável ao menos em Windows.
 
-✅ Movimentos das Peças
-Cada peça segue as regras padrão do xadrez:
-
-Peça	Movimento
-Peão	Avança 1 ou 2 casas no primeiro movimento, captura na diagonal
-Torre	Move-se em linha reta horizontal ou vertical
-Cavalo	Movimento em "L", pode saltar peças
-Bispo	Mova-se em diagonais
-Rainha	Mova-se em todas as direções
-Rei	Move-se uma casa em qualquer direção
-✅ Roque
-O roque é permitido nas seguintes condições:
-
-O rei e a torre envolvidos nunca se moveram antes.
-Não há peças entre o rei e a torre.
-O rei não está em xeque e não atravessa uma casa sob ataque .
-✅ En Passant
-Ou então ocorre quando:
-
-Um peão avança duas casas de sua posição inicial.
-Um peão adversário poderia capturá-lo caso tivesse avançado apenas uma casa .
-O movimento precisa ser feito imediatamente no turno seguinte.
-✅ Promoção de Peão
-Se um peão chega à última fileira, ele é promovido a rainha (ou outra peça escolhida).
-✅ Xeque e Xeque-Mate
-O jogo verifica se o rei está sob ameaça após cada jogo.
-Se não houver movimentos válidos para escapar do xeque , ocorre o xeque-mate .
+---
 
 ## Diagrama de Casos de Uso
 
