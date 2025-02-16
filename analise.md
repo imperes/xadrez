@@ -1,13 +1,35 @@
 # Análise orientada a objeto
 > [!NOTE]
 > <p>A <strong>análise</strong> orientada a objeto consiste na descrição do problema a ser tratado, duas primeiras etapas da tabela abaixo, a definição de casos de uso e a definição do domínio do problema.</p>
+A modelagem do jogo segue os princípios da **Programação Orientada a Objetos (POO)**, garantindo encapsulamento, modularidade e reutilização de código. 
 
+# ♟️ Jogo de Xadrez em C++ com Qt Creator
+
+## 📌 Visão Geral
+
+Este projeto é um jogo de xadrez desenvolvido em **C++ utilizando Qt Creator**. O objetivo é criar um jogo funcional que respeite as regras oficiais do xadrez, incluindo **movimentos das peças, roque, promoção de peões e en passant**. O jogo possui uma **interface gráfica** baseada em `QGraphicsScene` para visualização do tabuleiro e interações.
+
+---
 
 ## Descrição Geral do domínio do problema
 
-### Domínio do Problema: Jogo de Xadrez
+---
 
-O xadrez é um jogo de tabuleiro de posicionamento estratégico para dois jogadores, onde cada jogador faz o uso de 16 peças classificadas em 6 tipos de movimentações diferentes com o objetivo de colocar o rei adversário em uma posição em que ele não possa evitar ser capturado (xeque-mate). O jogo é ambientado em um tabuleiro xadrez de 8x8 casas, onde metade das casas são da cor branca e a outra metade pretas. O controle do jogo, a movimentação das peças e a detecção de condições de vitória e empate são os aspectos essenciais do sistema.
+## 🎯 **Domínio do Problema: Jogo de Xadrez**
+
+O xadrez é um jogo estratégico para dois jogadores, com um tabuleiro **8x8** e um conjunto fixo de peças que possuem **regras específicas de movimentação**. O jogo termina quando um dos reis está em **xeque-mate** ou quando ocorre um empate.
+
+### ✨ **Regras Implementadas**
+- ✅ Movimentação correta das peças
+- ✅ Validação de jogadas (movimentos legais e ilegais)
+- ✅ Captura de peças adversárias
+- ✅ Troca de turnos automática
+- ✅ Detecção de **xeque** e **xeque-mate**
+- ❌ Implementação do **roque**
+- ✅ **Promoção de peão** ao alcançar a última fileira
+- ❌ **En passant** (captura especial do peão)
+
+---
 
 ### Requisitos Funcionais
 
