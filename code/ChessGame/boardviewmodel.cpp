@@ -90,12 +90,7 @@ bool BoardViewModel::validatePawnPalcementForMousePosition(QPoint point) {
 bool BoardViewModel::validatePawnMove(BoardPosition positionToMove,
                                       BasePawnModel *pawn,
                                       BoardPosition *requestedActivePawnPosition) {
-    BasePawnModel *pawnToValidate;
-    if (pawn) {
-        pawnToValidate = pawn;
-    } else {
-        pawnToValidate = activePawn;
-    }
+    BasePawnModel *pawnToValidate = pawn ? pawn : activePawn;
 
     BasePawnModel *pawnOnPositionToMove = getPawnOnBoardPosition(positionToMove);
     bool isMoveValid = pawnToValidate->validateMove(positionToMove, pawnOnPositionToMove, requestedActivePawnPosition);
@@ -110,7 +105,10 @@ bool BoardViewModel::validatePawnMove(BoardPosition positionToMove,
     case PawnType::knight:
         return isMoveValid;
     }
+
+    return isMoveValid; // Final validate
 }
+
 
 bool BoardViewModel::didRemoveEnemyOnBoardPosition(BoardPosition boardPosition) {
     BasePawnModel *pawn = getPawnOnBoardPosition(boardPosition);
