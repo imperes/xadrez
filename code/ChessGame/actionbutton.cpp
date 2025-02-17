@@ -22,16 +22,16 @@ ActionButton::ActionButton(QString title) {
     setAcceptHoverEvents(true);
 }
 
-void ActionButton::mousePressEvent(QGraphicsSceneMouseEvent *event) {
+void ActionButton::mousePressEvent(QGraphicsSceneMouseEvent */*event*/) {
     emit buttonPressed();
 }
 
-void ActionButton::hoverEnterEvent(QGraphicsSceneHoverEvent *event) {
+void ActionButton::hoverEnterEvent(QGraphicsSceneHoverEvent */*event*/) {
     QColor backgroundColor = QColor(196, 178, 140);
     Utils::setBackgroundColor(backgroundColor, this);
 }
 
-void ActionButton::hoverLeaveEvent(QGraphicsSceneHoverEvent *event) {
+void ActionButton::hoverLeaveEvent(QGraphicsSceneHoverEvent */*event*/) {
     QColor backgroundColor = QColor(157, 128, 101);
     Utils::setBackgroundColor(backgroundColor, this);
 }
