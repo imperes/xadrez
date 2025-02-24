@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>imagens/piaopreto.png</file>
+        <file>imagens/piaobranco.png</file>
+        <file>imagens/bispobranco.png</file>
+        <file>imagens/bispopreto.png</file>
+        <file>imagens/cavalobranco.png</file>
+        <file>imagens/cavalopreto.png</file>
+        <file>imagens/rainhabranca.png</file>
+        <file>imagens/rainhapreta.png</file>
+        <file>imagens/reibranco.png</file>
+        <file>imagens/reipreto.png</file>
+        <file>imagens/torrebranca.png</file>
+        <file>imagens/torrepreta.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>imagens/piaobranco.png</file>
+    </qresource>
+</RCC>
