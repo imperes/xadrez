@@ -25,7 +25,7 @@ O xadrez é um jogo estratégico para dois jogadores, com um tabuleiro **8x8** e
 - ✅ Captura de peças adversárias
 - ✅ Troca de turnos automática
 - ✅ Detecção de **xeque** e **xeque-mate**
-- ❌ Implementação do **roque**
+- ✅ Implementação do **roque**
 - ✅ **Promoção de peão** ao alcançar a última fileira
 - ❌ **En passant** (captura especial do peão)
 
