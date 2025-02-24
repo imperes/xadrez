@@ -78,7 +78,7 @@ O xadrez é um jogo estratégico para dois jogadores, com um tabuleiro **8x8** e
 ## Diagrama de Casos de Uso
 
 <figure>
-  <img src="img/casos de uso xadrez.drawio.png" width="60%" style="padding: 10px">
+  <img src="img/casos_uso_xadrez.png" width="60%" style="padding: 10px">
   <figcaption>Diagrama de Casos de Uso - Jogo de Xadrez</figcaption>
 </figure>
 
