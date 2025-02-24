@@ -81,6 +81,6 @@ O jogo de xadrez foi implementado com sucesso, cobrindo todas as regras fundamen
 
 <div align="center">
 
-[Retroceder](projeto.md) | [Início](analise.md)
+[Retroceder](projeto.md) | [Avançar](testes.md)
 
 </div>
