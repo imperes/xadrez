@@ -93,10 +93,13 @@ O xadrez é um jogo estratégico para dois jogadores, com um tabuleiro **8x8** e
 
 - Ao iniciar a partida, o sistema deve apresentar um tabuleiro de xadrez com dimensões de 8 x 8 casas, sendo estas alternadas entre casas pretas e brancas, com as peças dispostas nas posições oficiais do xadrez e com ícones reconhecíveis. O sistema também garante que a primeira jogada seja realizada obrigatoriamente pelo jogador com as peças brancas.
 
-#### 2. Movimentar Peça
+#### 2. Seleciona Peça
+- O jogador irá clicar com o botão direito do mouse sobre a peça que deseja mover
+
+#### 3. Movimentar Peça
 - O jogador move uma peça de acordo com as regras do xadrez.
 
-#### 3. Validar Movimento
+#### 4. Validar Movimento
 - Após a jogada de cada participante, o sistema deve conferir se o movimento da peça é válido de acordo com as regras do xadrez, que são:
     - **Peão**: Anda uma casa para frente, exceto na jogada de abertura, onde ele pode andar duas casas.
     - **Torre**: Move-se por n casas livres no eixo "X" (cima e baixo) e no eixo "Y" (direita e esquerda).
@@ -106,14 +109,11 @@ O xadrez é um jogo estratégico para dois jogadores, com um tabuleiro **8x8** e
     - **Rei**: Move-se uma casa livre de sua cor no tabuleiro no eixo "X", eixo "Y" e diagonais.
 - O sistema valida a jogada e atualiza o estado do tabuleiro. Caso a movimentação seja inválida, o sistema impede o movimento.
 
-#### 4. Capturar Peça
+#### 5. Detecta a captura da Peça
 - O sistema verifica se há uma peça adversária ocupando a casa de destino de uma peça movimentada. Caso haja, ela é capturada e removida do tabuleiro.
 
-#### 5. Detectar Xeque
-- O sistema verifica se o rei de um jogador está em xeque, ou seja, se está sob a ameaça de ser capturado por uma peça adversária. Se isso ocorrer, o sistema impede que o jogador faça movimentos que não resolvam o xeque.
-
-#### 6. Detectar Xeque-Mate
-- O sistema verifica se o rei está em uma situação de xeque-mate, ou seja, se o rei inimigo está em uma posição ameaçada que não pode ser revertida. Caso isso aconteça, o sistema declara a vitória do jogador adversário e encerra a partida.
+#### 6. Detectar Xeque e Xeque-Mate
+- O sistema verifica se o rei de um jogador está em xeque ou xeue-mate, ou seja, se está sob a ameaça de ser capturado por uma peça adversária ou se o rei inimigo está em uma posição ameaçada que não pode ser revertida. Se isso ocorrer, o sistema impede que o jogador faça movimentos que não resolvam o xeque e em caso de xeque-mate, a partida se encerra.
 
 #### 7. Alternar Turno
 - Caso a jogada tenha sido legal, não haja mais nenhuma ameaça de xeque e não tenha ocorrido um xeque-mate, o sistema alterna o turno entre os dois jogadores.
