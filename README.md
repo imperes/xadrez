@@ -8,7 +8,7 @@
 
 > Repositório destinado para o desenvolvimento do projeto final da discipliana PRG22107 - Programação orienta a objeto. 
 
-> Aluno: Gabriel de Oliveira Peres
+> Aluno: Gabriel de Oliveira Peres e Paulo Henrique
  
 > Professor: Hugo Marcondes
 
