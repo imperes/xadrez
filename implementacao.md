@@ -23,7 +23,7 @@ O projeto é composto pelas seguintes classes:
 
 O projeto foi organizado em uma estrutura modular, separando a lógica do jogo, a interface gráfica e as regras de movimentação das peças. A seguir, a estrutura dos arquivos principais:
 ````
-ChessGame/
+Xadrez/
 │── xadrez_v2/
 │── Sources/
 │   ├── main.cpp
@@ -33,7 +33,7 @@ ChessGame/
 │   ├── gameview.h
 │   ├── piece.h
 │── Images/ (Imagens das peças)
-│── ChessGame.pro (Arquivo de configuração do Qt)
+│── xadrez_v2.pro (Arquivo de configuração do Qt)
 ````
 
 ---
