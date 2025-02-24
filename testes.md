@@ -60,8 +60,6 @@ Os testes foram divididos nas seguintes categorias:
 | Cenário |	Resultado |
 |--------|----------------------------------|
 |Reiniciar após xeque-mate |	✅ Sucesso |
-|Reiniciar durante um jogo em andamento |	✅ Sucesso |
-|Reiniciar sem peças no tabuleiro (testando estado inconsistente) |	✅ Sucesso |
 ---
 ### 7. Conclusão
 Os testes demonstraram que o jogo segue corretamente as regras do xadrez, exibindo as interações corretas e prevenindo movimentos ilegais. O sistema está estável e funcionando conforme esperado. Pequenos ajustes podem ser feitos para aprimorar a experiência do usuário, como a possibilidade de escolher em que peça promover o peão. O jogo pode ser considerado aprovado para uso com sucesso.
