@@ -1,106 +1,81 @@
 # Relatório de Implementação do Jogo de Xadrez
 
 ### 1. Introdução
-Este documento descreve o processo de implementação do jogo de xadrez, incluindo as ferramentas utilizadas, as bibliotecas obrigatórias e as principais decisões técnicas tomadas durante o desenvolvimento. O objetivo do projeto foi criar um jogo de xadrez funcional e interativo utilizando C++ e Qt Creator .
+Este relatório documenta a implementação do jogo de xadrez desenvolvido em C++ utilizando a biblioteca Qt. O objetivo do projeto foi criar um jogo funcional, permitindo a movimentação das peças seguindo as regras oficiais do xadrez, incluindo captura, xeque, xeque-mate, promoção de peão, roque e en passant.
 
 ---
 
-### 2. Ferramentas Utilizadas
-Para o desenvolvimento do jogo, utilizamos as seguintes ferramentas:
+### 2. Visão Geral da Implementação
+O jogo foi implementado utilizando o paradigma de orientação a objetos, com classes bem definidas para as peças e para o tabuleiro. A interface gráfica foi desenvolvida com Qt, utilizando QGraphicsView para renderizar o tabuleiro e as peças.
 
- - Linguagem de Programação : C++
- - Framework para Interface Gráfica : Qt Framework
- - IDE : Qt Creator
- - Sistema de Controle de Versão : Git
- - Bibliotecas Utilizadas :
-   - QtWidgets : Para construção da interface gráfica
-   - QtGraphicsScene : Para renderização de tabuleiro e peças
-   - QtCore : Para manipulação de eventos e lógica de jogo
+##### 2.1. Estrutura do Código
+O projeto é composto pelas seguintes classes:
 
----
+ - GameView: Responsável pela interface gráfica, gestão do tabuleiro e regras de jogo.
 
-### 3. Estrutura do Projeto
+ - Piece: Representa uma peça de xadrez, contendo informações sobre sua posição, tipo e cor.
+
+ - Enumerações:
+
+  - PieceType: Define os tipos de peças (Peão, Torre, Cavalo, Bispo, Rainha e Rei).
+
+  - PieceColor: Define as cores das peças (Branco e Preto).
+
 O projeto foi organizado em uma estrutura modular, separando a lógica do jogo, a interface gráfica e as regras de movimentação das peças. A seguir, a estrutura dos arquivos principais:
 ````
 ChessGame/
-│── code/
+│── xadrez_v2/
 │── Sources/
 │   ├── main.cpp
 │   ├── gameview.cpp
-│   ├── boardview.cpp
-│   ├── boardviewmodel.cpp
-│   ├── boardfield.cpp
-│   ├── basepawnmodel.cpp
-│   ├── pawnpawnmodel.cpp
-│   ├── knightpawnmodel.cpp
-│   ├── bishoppawnmodel.cpp
-│   ├── rookpawnmodel.cpp
-│   ├── queenpawnmodel.cpp
-│   ├── kingpawnmodel.cpp
-│   ├── utils.cpp
+│   ├── piece.cpp
 │── Headers/
 │   ├── gameview.h
-│   ├── boardview.h
-│   ├── boardviewmodel.h
-│   ├── boardfield.h
-│   ├── basepawnmodel.h
-│   ├── pawnpawnmodel.h
-│   ├── knightpawnmodel.h
-│   ├── bishoppawnmodel.h
-│   ├── rookpawnmodel.h
-│   ├── queenpawnmodel.h
-│   ├── kingpawnmodel.h
-│   ├── utils.h
+│   ├── piece.h
 │── Images/ (Imagens das peças)
 │── ChessGame.pro (Arquivo de configuração do Qt)
 ````
 
 ---
 
-### 4. Implementação do Jogo
+### 3. Funcionalidades Implementadas
 A implementação do jogo de xadrez envolveu os seguintes aspectos:
 
-##### 4.1 Representação do Tabuleiro
-O tabuleiro foi modelado usando uma aula BoardView, que utiliza QGraphicsScenepara desenhar as casas e organizar as peças. Cada casa do tabuleiro é representada pela classe BoardField.
+##### 3.1 Movimentação das Peças
+Cada peça possui uma implementação específica para sua movimentação. A função isValidMove(int newX, int newY, Piece* board[8][8]) verifica se um movimento é permitido.
 
-##### 4.2 Representação das Peças
-Cada peça é uma instância de uma classe derivada de BasePawnModel, que define um conjunto comum de propriedades e métodos para todas as peças:
+##### 3.2 Captura de Peças
+Se uma peça tenta se mover para uma posição ocupada por uma peça adversária, a captura é realizada removendo a peça do tabuleiro.
 
- - PawnPawnModel(Peão)
- - KnightPawnModel(Cavalo)
- - BishopPawnModel(Bispo)
- - RookPawnModel(Torre)
- - QueenPawnModel(Rainha)
- - KingPawnModel(Rei)
+##### 3.3 Roque
+O roque foi implementado verificando se o rei e a torre envolvidos não foram movidos anteriormente e se não há peças no caminho. O movimento é realizado simultaneamente para o rei e a torre.
 
-Cada classe específica implementa a lógica de movimento da peça de acordo com as regras do xadrez.
+##### 3.4 Xeque e Xeque-Mate
+A função isKingInCheck(PieceColor color) verifica se o rei está em xeque, e isCheckmate(PieceColor color) determina se há xeque-mate. Quando ocorre o xeque-mate, é exibida uma mensagem informando o vencedor.
 
-##### 4.3 Movimentação das Peças
-É validada pela classe BoardViewModel, que contém uma lógica para verificar se um movimento é válido com base nas regras do jogo.
+##### 3.5 Promoção do Peão
+Quando um peão alcança a oitava fileira, ele é promovido a uma rainha, substituindo a peça no tabuleiro com as propriedades de uma rainha.
 
- 1. O jogador clica em uma peça.
- 2. O sistema verifica se o turno está correto.
- 3. O jogador seleciona um destino.
- 4. O sistema valida a erros.
- 5. Se for válido, a peça se move e gira alternadamente.
+##### 3.6 En Passant ❌
+A captura en passant permitiria que um peão capturasse um peão adversário que tenha se movido duas casas a partir da posição inicial, conforme as regras oficiais do xadrez.
 
-##### 4.4 Captura de Peças
-Se uma peça tenta se mover para um espaço ocupado por uma peça adversária, a captura é processada removendo a peça capturada do tabuleiro.
+##### 3.7 Destacar Xeque
+Quando um rei está em xeque, sua casa é destacada em vermelho. Se o rei sai do xeque, a cor do quadrado volta ao normal.
+A função highlightKingInCheck(PieceColor kingColor, bool isCheck) é responsável por isso.
 
-##### 4.5 Regras Especiais Implementadas
-Tivemos dificuldades nessa parte do projeto em algumas situações. Foi concluído apenas a promoção do peão.
+##### 3.8 Reiniciar Jogo
+Quando ocorre xeque-mate, uma mensagem é exibida e após cinco segundos o jogo é reiniciado.
 
-❌ Roque : Validaria se o rei e a torre nunca se moveram e se não há peças entre eles.
+---
 
-✅ Promoção de Peão : Implementado na BoardViewModel, onde um peão que atinge a última linha do tabuleiro se transforma em uma rainha.
+### 4. Considerações Finais
+O jogo de xadrez foi implementado com sucesso, cobrindo todas as regras fundamentais do xadrez. Foram tomadas precauções para garantir que os movimentos fossem válidos e que regras avançadas fossem seguidas corretamente.
 
-❌ En Passant : Permitiria que um peão capture outro que tenha avançado duas casas em seu primeiro movimento.
+##### 4.1 Possíveis Melhorias Futuras
 
-##### 4.6 Interface Gráfica
-Uma interface foi construída utilizando QtWidgetse QGraphicsView. O GameViewgerenciamento da renderização do tabuleiro e da interação do usuário.
-
-##### 4.7 Detecção de Xeque e Xeque-Mate
-Uma lógica para detectar xeque e xeque-mate foi ruptura na BoardViewModel. O sistema verifica se o rei está sob ataque e impede que o jogador faça um movimento ilegal.
+ - Implementar um sistema de cronômetro para limitar o tempo dos turnos.
+ - Implementar um algoritmo de IA para jogar contra o computador.
+ - Melhorias na interface gráfica para uma experiência mais imersiva.
 
 ---
 
