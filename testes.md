@@ -32,8 +32,8 @@ Os testes foram divididos nas seguintes categorias:
 | Regra |	Cenário Testado |	Resultado |
 |--------|----------------------------------|------------|
 |Roque |	Rei e torre não movidos, caminho livre |	✅ Sucesso |
-|Roque | Rei passando por xeque |	❌ Bloqueado corretamente |
-|Roque |	Tentativa com torre já movida |	❌ Bloqueado corretamente |
+|Roque | Rei passando por xeque |	✅ Bloqueado corretamente |
+|Roque |	Tentativa com torre já movida |	✅ Bloqueado corretamente |
 |En Passant |	Peão adversário movendo duas casas e sendo capturado en passant |	❌ Falha |
 |Promoção de Peão |	Peão promovido ao alcançar a última linha |	✅ Sucesso (transformação em Rainha) |
 |Xeque |	Rei ameaçado sem opções de fuga |	✅ Mensagem de "Xeque" exibida |
